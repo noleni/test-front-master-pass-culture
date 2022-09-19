@@ -1,14 +1,13 @@
 import "./App.css";
 
 import React from "react";
-import logo from "./logo-pass-culture.svg";
+
+import NewsList from "./components/NewsList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <NewsList />
     </div>
   );
 }
