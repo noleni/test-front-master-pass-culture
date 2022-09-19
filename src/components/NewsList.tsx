@@ -5,7 +5,7 @@ import NewsItem from './NewsItem';
 
 import styles from './styles/NewsList.module.css';
 
-const NewsList : React.FC<{onSelectCategory: (NewsData : {}) => []}> = (props) => {
+const NewsList : React.FC<{onSelectCategory: (NewsData : {}) => []; newItem :{}[]}> = (props) => {
 
   const [dataNews, setDataNews] = useState(NewsData.news);
   let count = 0;
@@ -13,6 +13,8 @@ const NewsList : React.FC<{onSelectCategory: (NewsData : {}) => []}> = (props) =
   useEffect(() => {
     setDataNews(props.onSelectCategory(NewsData.news))
   }, [props]);
+
+  console.log(props.newItem);
 
   const news = dataNews.map((newsEach) => (
     <NewsItem
