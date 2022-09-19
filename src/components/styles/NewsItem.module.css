@@ -1,0 +1,12 @@
+.li {
+  list-style: none;
+}
+
+.card h3 {
+  color: #EC0055;
+}
+
+.card .infos {
+  display: flex;
+  justify-content: space-between;
+}
