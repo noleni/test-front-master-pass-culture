@@ -1,9 +1,23 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
+it("renders without crashing", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+});
+
+
+test("hide form by default", () => {
+  render(<App />);
+  const formEl = screen.queryByRole('form', { name: "form" });
+  expect(formEl).not.toBeInTheDocument()
+});
+
+test("render form if button 'Ajoute une news' is clicked", () => {
+  render(<App />);
+  const buttonEl = screen.getByRole('button');
+  userEvent.click(buttonEl);
+  const formEl = screen.getByRole('form', { name: "form" });
+  expect(formEl).toBeInTheDocument();
 });
