@@ -1,0 +1,11 @@
+.dropdown-input {
+  padding: 1rem;
+  width: 100%;
+  margin: auto;
+}
+
+.label {
+  display: block;
+  padding-left: 16px;
+  font-weight: bold;
+}

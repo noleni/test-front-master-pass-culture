@@ -1,0 +1,14 @@
+.btn-main {
+  background-color: blueviolet;
+  padding: 16px;
+  border-radius: 22px;
+  border: 0.2px solid white;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.6s;
+  transition: color;
+}
+
+.btn-main:hover {
+  transform: scale(1.05);
+}

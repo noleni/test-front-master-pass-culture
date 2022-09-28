@@ -1,13 +1,13 @@
-import styles from './Card.module.css'
+import styles from './styles/Card.module.css';
 
 interface PropsCard {
   className? : string;
   children : JSX.Element | JSX.Element[];
 }
 
-const Card = (props:PropsCard) => {
+const Card = ({ className, children}: PropsCard) => {
   return (
-    <div className={styles.card}>{props.children}</div>
+    <div className={`${styles.cards} ${className}`}>{children}</div>
   )
 };
 

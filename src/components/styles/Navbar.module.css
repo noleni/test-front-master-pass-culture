@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ED0055;
+  padding: 22px;
+}
+
+.dropdown-fields {
+  flex-grow: 1;
+}
+
+
+@media(max-width: 764px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
