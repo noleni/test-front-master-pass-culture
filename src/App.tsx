@@ -16,7 +16,7 @@ function App() {
   const [displayForm, setDisplayForm] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
 
-  const selectionHandler = (data : any) => {
+  const selectionHandler = (data : []) => {
     if (selectedCategory.value !== 'Tous') {
       return data.filter((option:any) => option.category.includes(selectedCategory.value));
     } else if (selectedDate !== '') {
@@ -27,11 +27,6 @@ function App() {
 
   const dateChangeHandler = (event : React.ChangeEvent<HTMLInputElement>) => {
     setSelectedDate(event.target.value);
-  };
-
-  const displayFormhandler = (event : React.SyntheticEvent) => {
-    event.preventDefault();
-    setDisplayForm(true);
   };
 
   const addNewsHandler = (title:string, category:string, date:any, text:string) => {
@@ -47,7 +42,7 @@ function App() {
             value={selectedDate}
             onSelect={setSelectedCategory}
             onChange={dateChangeHandler}
-            onClick={displayFormhandler}
+            onClick={() => setDisplayForm(true)}
           />
           <NewsList
             news={dataNews}
